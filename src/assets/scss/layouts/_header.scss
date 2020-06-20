@@ -1,0 +1,14 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  ul {
+    list-style-type: none;
+    display: flex;
+
+    li {
+      margin: auto 10px;
+    }
+  }
+}

@@ -3,11 +3,11 @@
     <form @submit.prevent="onSubmit">
       <div class="form-item">
         <label for="email">Email</label>
-        <input type="text" v-model="email" name="email" />
+        <input type="email" v-model="email" name="email" required />
       </div>
       <div class="form-item">
         <label for="password">Password:</label>
-        <input type="text" v-model="password" name="password" />
+        <input type="password" v-model="password" name="password" minlength="8" required />
       </div>
       <button class="btn">Sign in</button>
     </form>
