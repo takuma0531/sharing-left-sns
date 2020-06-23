@@ -18,3 +18,5 @@ const jwtService = {
     localStorage.removeItem(REFRESH_TOKEN_KEY);
   },
 };
+
+export default jwtService;
