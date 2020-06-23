@@ -7,7 +7,7 @@
       </div>
       <div class="form-item">
         <label for="password">Password</label>
-        <input type="password" v-model="password" name="password" minlength="8" required />
+        <input type="password" v-model="password" name="password" minlength="4" required />
       </div>
       <button class="btn">Sign in</button>
     </form>
@@ -18,12 +18,18 @@
 export default {
   data() {
     return {
-      email: '',
-      password: '',
+      email: "",
+      password: ""
     };
   },
   methods: {
-    onSubmit() {},
-  },
+    onSubmit() {
+      const userInfo = {
+        email: this.email,
+        password: this.password
+      };
+      this.$store.dispatch("loginUser", userInfo);
+    }
+  }
 };
 </script>

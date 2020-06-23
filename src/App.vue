@@ -9,16 +9,15 @@
 </template>
 
 <script>
-import { Footer, NavBar } from '@/components';
+import { Footer, NavBar } from "@/components";
 
 export default {
   components: {
     Footer,
-    NavBar,
+    NavBar
   },
   mounted() {
-    this.$store.dispatch('registerUser');
-    // this.$store.dispatch('loginUser');
-  },
+    this.$store.dispatch("authenticateUser");
+  }
 };
 </script>
