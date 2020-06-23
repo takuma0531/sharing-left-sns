@@ -6,7 +6,7 @@
         <input type="email" v-model="email" name="email" required />
       </div>
       <div class="form-item">
-        <label for="password">Password:</label>
+        <label for="password">Password</label>
         <input type="password" v-model="password" name="password" minlength="8" required />
       </div>
       <button class="btn">Sign in</button>

@@ -1,5 +1,7 @@
-@import './layouts/footer';
-@import './layouts/header';
+@import './components/layouts/footer';
+@import './components/layouts/navBar';
+
+@import './views/user-form';
 
 * {
   box-sizing: border-box;
@@ -14,7 +16,7 @@
 
 .container {
   max-width: 1200px;
-  margin: auto;
+  margin: 150px auto;
 }
 
 a {

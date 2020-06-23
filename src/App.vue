@@ -9,12 +9,12 @@
 </template>
 
 <script>
-import { Footer, NavBar } from '@/components';
+import { Footer, NavBar } from "@/components";
 
 export default {
   components: {
     Footer,
-    NavBar,
+    NavBar
   },
 };
 </script>
