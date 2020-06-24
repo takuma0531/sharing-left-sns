@@ -2,15 +2,15 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import store from '../store';
 import { AUTHENTICATE_USER } from '../store/types/actions.type';
-import { Home, SignIn, SignUp } from '../views';
+import { Explore, SignIn, SignUp, Home } from '../views';
 
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home,
+    path: '/explore',
+    name: 'Explore',
+    component: Explore,
   },
   {
     path: '/user/sign-in',
@@ -22,6 +22,11 @@ const routes = [
     name: 'SignUp',
     component: SignUp,
   },
+  {
+    path: '/home',
+    name: 'Home',
+    component: Home,
+  },
 ];
 
 const router = new VueRouter({
@@ -31,7 +36,7 @@ const router = new VueRouter({
 });
 
 router.beforeEach(async (to, from, next) => {
-  const publicPages = ['/user/sign-in', '/user/sign-up', '/'];
+  const publicPages = ['/user/sign-in', '/user/sign-up', '/explore'];
   const authRequired = !publicPages.includes(to.path);
   await store.dispatch(AUTHENTICATE_USER);
   const isAuthenticated = store.getters.isAuthenticated;

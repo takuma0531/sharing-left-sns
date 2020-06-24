@@ -1,7 +1,7 @@
 <template>
   <div class="nav-bar">
     <nav>
-      <router-link to="/">Home</router-link>
+      <router-link :to="{ path: url }">Home</router-link>
       <ul v-if="!isAuthenticated">
         <li>
           <router-link to="/user/sign-up">Sign up</router-link>
@@ -24,7 +24,10 @@ import { mapGetters, mapActions } from "vuex";
 
 export default {
   computed: {
-    ...mapGetters(["isAuthenticated"])
+    ...mapGetters(["isAuthenticated"]),
+    url() {
+      return this.isAuthenticated ? "/home" : "/explore";
+    }
   },
   methods: {
     ...mapActions({

@@ -1,11 +1,9 @@
 <template>
   <div class="home">
-    Home
+    The list of what your followers lost recently!!
   </div>
 </template>
 
 <script>
-export default {
-  name: 'Home',
-};
+export default {};
 </script>

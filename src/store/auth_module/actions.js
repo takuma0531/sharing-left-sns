@@ -7,6 +7,7 @@ const registerUser = async ({ commit }, userInfo) => {
   try {
     const res = await apiService.api.post('/users', userInfo);
     commit(SET_TOKENS, res.data);
+    router.push('/home');
   } catch (err) {
     console.log(err.response.data);
   }
@@ -16,6 +17,7 @@ const loginUser = async ({ commit }, userInfo) => {
   try {
     const res = await apiService.api.post('/login', userInfo);
     commit(SET_TOKENS, res.data);
+    router.push('/home');
   } catch (err) {
     console.log(err.response.data);
   }
@@ -30,7 +32,7 @@ const authenticateUser = async ({ commit }) => {
     commit(SET_TOKENS, res.data);
   } catch (err) {
     console.log(err.response.data);
-    router.push('/user/sign-in');
+    // router.push('/user/sign-in');
   }
 };
 
