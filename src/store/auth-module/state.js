@@ -1,3 +1,5 @@
-const state = {};
+const state = {
+  isAuthenticated: false,
+};
 
 export default state;

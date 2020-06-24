@@ -17,7 +17,6 @@ export default {
     NavBar
   },
   mounted() {
-    this.$store.dispatch("authenticateUser");
   }
 };
 </script>

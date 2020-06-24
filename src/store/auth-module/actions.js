@@ -23,7 +23,7 @@ const authenticateUser = async ({ commit }) => {
   try {
     apiService.setToken();
     const res = await apiService.api.get('token');
-    console.log(res.data);
+    commit(SET_TOKENS, res.data);
   } catch (err) {
     console.log(err.response.data);
   }
