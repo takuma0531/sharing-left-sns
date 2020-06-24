@@ -10,16 +10,26 @@
           <router-link to="/user/sign-in">Sign in</router-link>
         </li>
       </ul>
+      <ul v-if="isAuthenticated">
+        <li>
+          <button @click="logout">Log out</button>
+        </li>
+      </ul>
     </nav>
   </div>
 </template>
 
 <script>
+import { mapGetters, mapActions } from "vuex";
+
 export default {
-  data() {
-    return {
-      isAuthenticated: false,
-    };
+  computed: {
+    ...mapGetters(["isAuthenticated"])
   },
+  methods: {
+    ...mapActions({
+      logout: "logoutUser"
+    })
+  }
 };
 </script>

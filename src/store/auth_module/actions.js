@@ -34,10 +34,16 @@ const authenticateUser = async ({ commit }) => {
   }
 };
 
+const logoutUser = ({ commit }) => {
+  commit(CLEAR_TOKENS);
+  router.push('/');
+};
+
 const actions = {
   registerUser,
   loginUser,
   authenticateUser,
+  logoutUser,
 };
 
 export default actions;

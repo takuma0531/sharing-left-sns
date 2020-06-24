@@ -6,6 +6,7 @@ const setTokens = (state, { accessToken, refreshToken }) => {
 };
 
 const clearTokens = (state) => {
+  state.isAuthenticated = false;
   jwtService.removeToken();
 };
 

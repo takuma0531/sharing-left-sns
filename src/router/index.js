@@ -37,12 +37,9 @@ router.beforeEach(async (to, from, next) => {
   const isAuthenticated = store.getters.isAuthenticated;
 
   // redirect to login page
-  if (authRequired && !isAuthenticated) {
-    console.log('go to sign page');
-    next('/user/sign-in');
-  } else {
-    next();
-  }
+  if (authRequired && !isAuthenticated) next('/user/sign-in');
+  else if (authRequired && isAuthenticated) next();
+  else next();
 });
 
 export default router;
