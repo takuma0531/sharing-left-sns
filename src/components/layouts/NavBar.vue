@@ -2,7 +2,7 @@
   <div class="nav-bar">
     <nav>
       <router-link :to="{ path: url }">
-        <font-awesome-icon icon="home" />
+        <font-awesome-icon icon="grin-tongue-wink" />
       </router-link>
       <ul v-if="!isAuthenticated">
         <li>

@@ -2,7 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import store from '../store';
 import { AUTHENTICATE_USER } from '../store/types/actions.type';
-import { Explore, SignIn, SignUp, Home } from '../views';
+import { Explore, SignIn, SignUp, Home, Profile } from '../views';
 
 Vue.use(VueRouter);
 
@@ -26,6 +26,11 @@ const routes = [
     path: '/home',
     name: 'Home',
     component: Home,
+  },
+  {
+    path: '/profile',
+    name: 'Profile',
+    component: Profile,
   },
 ];
 

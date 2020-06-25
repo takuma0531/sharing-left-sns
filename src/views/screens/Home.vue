@@ -1,7 +1,11 @@
 <template>
   <div class="home">
     <div class="shortcuts">
-      <shortcut v-for="(shortcut, index) in shortcuts" :key="index" :shortcut="shortcut" />
+      <shortcut
+        v-for="(shortcut, index) in shortcuts"
+        :key="index"
+        :shortcut="shortcut"
+      />
     </div>
     <div class="posts">
       <post v-for="(post, index) in posts" :key="index" :post="post" />
@@ -19,7 +23,6 @@ export default {
   },
   data() {
     return {
-      posts: ['post1', 'post2', 'post3'],
       shortcuts: [
         {
           name: 'home',
@@ -38,6 +41,9 @@ export default {
         },
       ],
     };
+  },
+  computed: {
+    posts() {},
   },
 };
 </script>
