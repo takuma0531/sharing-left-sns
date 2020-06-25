@@ -1,5 +1,5 @@
 import apiService from '../../utils/api.service';
-import { SET_TOKENS, CLEAR_TOKENS } from '../types/mutations.type';
+import { SET_TOKENS, CLEAR_TOKENS, SET_USER } from '../types/mutations.type';
 import router from '../../router';
 import jwtService from '../../utils/jwt.service';
 
@@ -34,7 +34,7 @@ const getUser = async ({ commit }) => {
     if (!token) return;
     apiService.setToken();
     const res = await apiService.api.get('/users');
-    console.log(res.data);
+    commit(SET_USER, res.data);
   } catch (err) {
     console.log(err.response.data);
   }
@@ -46,8 +46,7 @@ const editUser = async ({ commit }, newUserInfo) => {
     if (!token) return;
     apiService.setToken();
     const res = await apiService.api.put('/users', newUserInfo);
-    console.log(res.data);
-    router.push('/home');
+    console.log(res.data); // Successfully updated
   } catch (err) {
     console.log(err.response.data);
   }
@@ -59,7 +58,7 @@ const deleteUser = async ({ commit }, password) => {
     if (!token) return;
     apiService.setToken();
     const res = await apiService.api.delete('/users', { data: { password: password }});
-    console.log(res.data);
+    console.log(res.data); // Successfully deleted
     router.push('/explore');
   } catch (err) {
     console.log(err.response.data);

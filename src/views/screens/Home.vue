@@ -1,9 +1,43 @@
 <template>
   <div class="home">
-    The list of what your followers lost recently!!
+    <div class="shortcuts">
+      <shortcut v-for="(shortcut, index) in shortcuts" :key="index" :shortcut="shortcut" />
+    </div>
+    <div class="posts">
+      <post v-for="(post, index) in posts" :key="index" :post="post" />
+    </div>
   </div>
 </template>
 
 <script>
-export default {};
+import { Post, Shortcut } from '../../components';
+
+export default {
+  components: {
+    Post,
+    Shortcut,
+  },
+  data() {
+    return {
+      posts: ['post1', 'post2', 'post3'],
+      shortcuts: [
+        {
+          name: 'home',
+          icon: 'home',
+          label: 'Home',
+        },
+        {
+          name: 'profile',
+          icon: 'user',
+          label: 'profile',
+        },
+        {
+          name: 'comment',
+          icon: '',
+          label: 'Share what you lost',
+        },
+      ],
+    };
+  },
+};
 </script>

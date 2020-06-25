@@ -1,7 +1,9 @@
 <template>
   <div class="nav-bar">
     <nav>
-      <router-link :to="{ path: url }">Home</router-link>
+      <router-link :to="{ path: url }">
+        <font-awesome-icon icon="home" />
+      </router-link>
       <ul v-if="!isAuthenticated">
         <li>
           <router-link to="/user/sign-up">Sign up</router-link>
@@ -12,7 +14,7 @@
       </ul>
       <ul v-if="isAuthenticated">
         <li>
-          <button @click="logout">Log out</button>
+          <button class="btn" @click="logout">Log out</button>
         </li>
       </ul>
     </nav>
