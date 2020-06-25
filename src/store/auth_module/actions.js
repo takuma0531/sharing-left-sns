@@ -23,6 +23,49 @@ const loginUser = async ({ commit }, userInfo) => {
   }
 };
 
+const logoutUser = ({ commit }) => {
+  commit(CLEAR_TOKENS);
+  router.push('/');
+};
+
+const getUser = async ({ commit }) => {
+  try {
+    const token = jwtService.getToken();
+    if (!token) return;
+    apiService.setToken();
+    const res = await apiService.api.get('/users');
+    console.log(res.data);
+  } catch (err) {
+    console.log(err.response.data);
+  }
+};
+
+const editUser = async ({ commit }, newUserInfo) => {
+  try {
+    const token = jwtService.getToken();
+    if (!token) return;
+    apiService.setToken();
+    const res = await apiService.api.put('/users', newUserInfo);
+    console.log(res.data);
+    router.push('/home');
+  } catch (err) {
+    console.log(err.response.data);
+  }
+};
+
+const deleteUser = async ({ commit }, password) => {
+  try {
+    const token = jwtService.getToken();
+    if (!token) return;
+    apiService.setToken();
+    const res = await apiService.api.delete('/users', { data: { password: password }});
+    console.log(res.data);
+    router.push('/explore');
+  } catch (err) {
+    console.log(err.response.data);
+  }
+};
+
 const authenticateUser = async ({ commit }) => {
   try {
     const token = jwtService.getToken();
@@ -36,14 +79,12 @@ const authenticateUser = async ({ commit }) => {
   }
 };
 
-const logoutUser = ({ commit }) => {
-  commit(CLEAR_TOKENS);
-  router.push('/');
-};
-
 const actions = {
   registerUser,
   loginUser,
+  getUser,
+  editUser,
+  deleteUser,
   authenticateUser,
   logoutUser,
 };
