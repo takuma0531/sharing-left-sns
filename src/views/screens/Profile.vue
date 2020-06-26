@@ -1,7 +1,7 @@
 <template>
   <div class="profile">
     profile
-    <!-- follower, following, posts, nickname -->
+    <!-- posts, nickname -->
   </div>
 </template>
 

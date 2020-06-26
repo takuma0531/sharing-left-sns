@@ -6,3 +6,6 @@ export const GET_USER = 'getUser';
 export const EDIT_USER = 'editUser';
 export const DELETE_USER = 'deleteUser';
 export const AUTHENTICATE_USER = 'authenticateUser';
+
+// profile module
+export const GET_PROFILE = 'getProfile';
