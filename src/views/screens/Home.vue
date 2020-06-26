@@ -1,5 +1,15 @@
 <template>
   <div class="home">
+    <transition name="fade" appear>
+      <div
+        class="modal-overlay"
+        v-if="isShowCommentModal"
+        @click="showCommentModal"
+      ></div>
+    </transition>
+
+    <comment-modal />
+  
     <div class="shortcuts">
       <shortcut
         v-for="(shortcut, index) in shortcuts"
@@ -7,6 +17,7 @@
         :shortcut="shortcut"
       />
     </div>
+
     <div class="posts">
       <post v-for="(post, index) in posts" :key="index" :post="post" />
     </div>
@@ -14,10 +25,12 @@
 </template>
 
 <script>
-import { Post, Shortcut } from '../../components';
+import { CommentModal, Post, Shortcut } from '../../components';
+import { mapGetters, mapMutations } from 'vuex';
 
 export default {
   components: {
+    CommentModal,
     Post,
     Shortcut,
   },
@@ -43,7 +56,11 @@ export default {
     };
   },
   computed: {
+    ...mapGetters(['isShowCommentModal']),
     posts() {},
+  },
+  methods: {
+    ...mapMutations(['showCommentModal']),
   },
 };
 </script>

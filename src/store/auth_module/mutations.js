@@ -24,6 +24,3 @@ const mutations = {
 };
 
 export default mutations;
-
-// kai@mail.com
-// 0000
