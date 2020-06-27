@@ -15,7 +15,6 @@
     <div class="posts">
       <post v-for="(post, index) in posts" :key="index" :post="post" />
     </div>
-    {{ posts }}
   </div>
 </template>
 
@@ -38,9 +37,6 @@ export default {
   methods: {
     ...mapMutations(['showCommentModal']),
     ...mapActions(['getUser', 'getPosts']),
-    check() {
-      console.log(this.$store.state.post.posts);
-    },
   },
   created() {
     this.getUser();

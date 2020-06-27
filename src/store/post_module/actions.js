@@ -3,7 +3,7 @@ import router from '../../router';
 import jwtService from '../../utils/jwt.service';
 
 // import mutations type
-import { ADD_POST, SET_POSTS, SET_POST } from '../types/mutations.type';
+import { ADD_POST, SET_POSTS, SET_POST, DELETE_POST } from '../types/mutations.type';
 
 const addPost = async ({ commit }, post) => {
   const refreshToken = jwtService.getToken();
@@ -38,8 +38,8 @@ const getPost = async ({ commit }, postId) => {
 
 const deletePost = async ({ commit }, postId) => {
   try {
-    const res = await apiService.api.delete(`posts/${postId}`);
-    console.log(res.data);
+    await apiService.api.delete(`posts/${postId}`);
+    commit(DELETE_POST, postId);
   } catch (err) {
     console.log(err);
   }

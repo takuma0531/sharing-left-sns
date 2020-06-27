@@ -37,6 +37,8 @@ export default {
     ...mapActions(['addPost']),
     add() {
       this.addPost(this.comment);
+      this.showCommentModal();
+      this.comment = null;
     }
   },
 };

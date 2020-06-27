@@ -2,25 +2,40 @@
   <div class="post">
     <router-link
       :to="{
-        path: `/profile/${post._poster.nickname}`,
-        query: { id: post._poster._id },
+        path: `/profile/${nickname}`,
+        query: { id: userId },
       }"
     >
-      Nickname: {{ post._poster.nickname }}
+      Nickname: {{ nickname }}
     </router-link>
     <br />
     Post Content: {{ post.content }}
-    <!-- TODO: delete button -->
+    <button @click="deletePost(post._id)">Delete</button>
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 export default {
+  data() {
+    return {};
+  },
   props: {
     post: {
       type: Object,
     },
   },
-  methods: {},
+  computed: {
+    nickname() {
+      return this.post._poster.nickname;
+    },
+    userId() {
+      return this.post._poster._id;
+    },
+  },
+  methods: {
+    ...mapActions(['deletePost']),
+  },
 };
 </script>

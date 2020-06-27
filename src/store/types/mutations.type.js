@@ -10,6 +10,7 @@ export const SET_PROFILE = 'setProfile';
 export const ADD_POST = 'addPost';
 export const SET_POSTS = 'setPosts';
 export const SET_POST = 'setPost';
+export const DELETE_POST = 'deletePost';
 
 // utils module
 export const SHOW_COMMENT_MODAL = 'showCommentModal';
