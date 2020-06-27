@@ -8,7 +8,7 @@ const setProfileUser = (state, user) => {
 };
 
 const setProfilePosts = (state, posts) => {
-  state.profile.posts = [];
+  state.profile.posts = posts;
 };
 
 const mutations = {

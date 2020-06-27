@@ -1,10 +1,20 @@
 <template>
   <div class="profile">
-    profile
-    <!-- posts, nickname -->
+    {{ profile }}
   </div>
 </template>
 
 <script>
-export default {};
+import { mapGetters, mapActions } from 'vuex';
+export default {
+  computed: {
+    ...mapGetters(['profile']),
+  },
+  methods: {
+    ...mapActions(['getProfile']),
+  },
+  created() {
+    this.getProfile(this.$route.query.id);
+  },
+};
 </script>

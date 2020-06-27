@@ -21,7 +21,8 @@ const addPost = async ({ commit }, post) => {
 const getPosts = async ({ commit }) => {
   try {
     const res = await apiService.api.get('/posts');
-    commit(SET_POSTS, res.data);
+    const { posts } =res.data;
+    commit(SET_POSTS, posts);
   } catch (err) {
     console.log(err.response.data);
   }

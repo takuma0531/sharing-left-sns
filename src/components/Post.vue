@@ -1,6 +1,15 @@
 <template>
   <div class="post">
-    {{ post }}
+    <router-link
+      :to="{
+        path: `/profile/${post._poster.nickname}`,
+        query: { id: post._poster._id },
+      }"
+    >
+      Nickname: {{ post._poster.nickname }}
+    </router-link>
+    <br />
+    Post Content: {{ post.content }}
   </div>
 </template>
 
@@ -8,8 +17,9 @@
 export default {
   props: {
     post: {
-      type: String,
-    }
-  }
+      type: Object,
+    },
+  },
+  methods: {},
 };
 </script>

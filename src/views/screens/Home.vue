@@ -9,7 +9,7 @@
     </transition>
 
     <comment-modal />
-  
+
     <div class="shortcuts">
       <shortcut
         v-for="(shortcut, index) in shortcuts"
@@ -26,7 +26,7 @@
 
 <script>
 import { CommentModal, Post, Shortcut } from '../../components';
-import { mapGetters, mapMutations } from 'vuex';
+import { mapGetters, mapMutations, mapActions } from 'vuex';
 
 export default {
   components: {
@@ -56,11 +56,18 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(['isShowCommentModal']),
-    posts() {},
+    ...mapGetters(['isShowCommentModal', 'posts']),
   },
   methods: {
     ...mapMutations(['showCommentModal']),
+    ...mapActions(['getPosts']),
+    check() {
+      console.log(this.$store.state.post.posts);
+    },
   },
+  created() {
+    this.getPosts();
+  },
+  mounted() {},
 };
 </script>
