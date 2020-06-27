@@ -1,20 +1,9 @@
-const setProfileId = (state, id) => {
-  state.profile.id = id;
-};
-
-const setProfileUser = (state, user) => {
-  user.__v = undefined;
-  state.profile.user = user;
-};
-
-const setProfilePosts = (state, posts) => {
-  state.profile.posts = posts;
-};
+const setProfile = (state, profile) => {
+  state.profile = profile;
+}
 
 const mutations = {
-  setProfileId,
-  setProfileUser,
-  setProfilePosts,
+  setProfile,
 };
 
 export default mutations;

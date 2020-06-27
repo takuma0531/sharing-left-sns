@@ -11,7 +11,7 @@ const addPost = async ({ commit }, post) => {
   apiService.setToken();
 
   try {
-    const res = await apiService.api.post('/posts', post);
+    const res = await apiService.api.post('/posts', { content: post });
     commit(ADD_POST, res.data);
   } catch (err) {
     console.log(err.response.data);
@@ -21,8 +21,7 @@ const addPost = async ({ commit }, post) => {
 const getPosts = async ({ commit }) => {
   try {
     const res = await apiService.api.get('/posts');
-    const { posts } =res.data;
-    commit(SET_POSTS, posts);
+    commit(SET_POSTS, res.data);
   } catch (err) {
     console.log(err.response.data);
   }

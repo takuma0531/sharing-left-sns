@@ -1,6 +1,6 @@
 const state = {
   isAuthenticated: false,
-  UserInfo: {},
+  userInfo: {},
 };
 
 export default state;

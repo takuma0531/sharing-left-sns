@@ -10,6 +10,7 @@
     </router-link>
     <br />
     Post Content: {{ post.content }}
+    <!-- TODO: delete button -->
   </div>
 </template>
 

@@ -10,11 +10,8 @@ const clearTokens = (state) => {
   jwtService.removeToken();
 };
 
-const setUser = (state, { nickname, email }) => {
-  state.userInfo = {
-    nickname,
-    email,
-  };
+const setUser = (state, userInfo) => {
+  state.userInfo = userInfo;
 };
 
 const mutations = {

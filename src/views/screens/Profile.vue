@@ -1,6 +1,11 @@
 <template>
   <div class="profile">
     {{ profile }}
+    <!-- TODO: protected from others editing -->
+    <button>
+      Edit Profile
+    </button>
+    <!-- TODO: create modal to edit -->
   </div>
 </template>
 
@@ -11,10 +16,12 @@ export default {
     ...mapGetters(['profile']),
   },
   methods: {
-    ...mapActions(['getProfile']),
+    ...mapActions(['getProfile', 'editUser']),
   },
   created() {
     this.getProfile(this.$route.query.id);
+  },
+  mounted() {
   },
 };
 </script>

@@ -1,12 +1,12 @@
-const addPost = (state, post) => {
+const addPost = (state, { post }) => {
   state.posts.push(post);
 };
 
-const setPosts = (state, posts) => {
+const setPosts = (state, { posts }) => {
   state.posts = posts;
 };
 
-const setPost = (state, post) => {
+const setPost = (state, { post }) => {
   state.post = post;
 };
 
