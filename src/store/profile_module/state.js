@@ -1,3 +1,5 @@
-const state = {};
+const state = {
+  profile: {},
+};
 
 export default state;
