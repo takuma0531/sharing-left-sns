@@ -41,7 +41,6 @@ const router = new VueRouter({
 });
 
 router.beforeEach(async (to, from, next) => {
-  store.dispatch('getPost', '5ef72e40a4aa350daaa32145');
   const publicPages = ['/user/sign-in', '/user/sign-up', '/explore'];
   const authRequired = !publicPages.includes(to.path);
   await store.dispatch(AUTHENTICATE_USER);

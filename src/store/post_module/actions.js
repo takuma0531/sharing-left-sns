@@ -19,19 +19,31 @@ const addPost = async ({ commit }, post) => {
 };
 
 const getPosts = async ({ commit }) => {
-  const res = await apiService.api.get('/posts');
-  commit(SET_POSTS, res.data);
+  try {
+    const res = await apiService.api.get('/posts');
+    commit(SET_POSTS, res.data);
+  } catch (err) {
+    console.log(err.response.data);
+  }
 };
 
 const getPost = async ({ commit }, postId) => {
-  const res  = await apiService.api.get(`posts/${postId}`);
-  console.log(res.data);
-  commit(SET_POST, res.data);
-}
+  try {
+    const res = await apiService.api.get(`posts/${postId}`);
+    commit(SET_POST, res.data);
+  } catch (err) {
+    console.log(err.response.data);
+  }
+};
 
 const deletePost = async ({ commit }, postId) => {
-  // DELETE a post
-}
+  try {
+    const res = await apiService.api.delete(`posts/${postId}`);
+    console.log(res.data);
+  } catch (err) {
+    console.log(err);
+  }
+};
 
 const actions = {
   addPost,
