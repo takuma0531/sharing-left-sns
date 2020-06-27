@@ -30,8 +30,8 @@ const logoutUser = ({ commit }) => {
 
 const getUser = async ({ commit }) => {
   try {
-    const token = jwtService.getToken();
-    if (!token) return;
+    const refreshToken = jwtService.getToken();
+    if (!refreshToken) return;
     apiService.setToken();
     const res = await apiService.api.get('/users');
     commit(SET_USER, res.data);
