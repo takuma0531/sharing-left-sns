@@ -57,7 +57,9 @@ const deleteUser = async ({ commit }, password) => {
     const token = jwtService.getToken();
     if (!token) return;
     apiService.setToken();
-    const res = await apiService.api.delete('/users', { data: { password: password }});
+    const res = await apiService.api.delete('/users', {
+      data: { password: password },
+    });
     console.log(res.data); // Successfully deleted
     router.push('/explore');
   } catch (err) {
@@ -67,10 +69,10 @@ const deleteUser = async ({ commit }, password) => {
 
 const authenticateUser = async ({ commit }) => {
   try {
-    const token = jwtService.getToken();
-    if (!token) return;
+    const refreshToken = jwtService.getToken();
+    if (!refreshToken) return;
     apiService.setToken();
-    const res = await apiService.api.get('token');
+    const res = await apiService.api.get('/token');
     commit(SET_TOKENS, res.data);
   } catch (err) {
     console.log(err.response.data);
@@ -78,14 +80,27 @@ const authenticateUser = async ({ commit }) => {
   }
 };
 
+const checkPassword = async ({ commit }, password) => {
+  try {
+    const refreshToken = jwtService.getToken();
+    if (!refreshToken) return;
+    apiService.setToken();
+    const res = await apiService.api.post('/auth/verifying-password', password);
+    console.log(res.data);
+  } catch (err) {
+    console.log(err.response.data);
+  }
+};
+
 const actions = {
   registerUser,
   loginUser,
+  logoutUser,
   getUser,
   editUser,
   deleteUser,
   authenticateUser,
-  logoutUser,
+  checkPassword,
 };
 
 export default actions;
