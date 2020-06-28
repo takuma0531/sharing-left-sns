@@ -1,9 +1,18 @@
 <template>
-  <div class="delete-user-button">
-    
+  <div class="user-delete-button">
+    <button @click="deleteUser">
+      Delete Account
+    </button>
   </div>
 </template>
 
 <script>
-export default {};
+import { mapActions } from 'vuex';
+import { DELETE_USER } from '../../store/types/actions.type';
+
+export default {
+  methods: {
+    ...mapActions([DELETE_USER]),
+  },
+};
 </script>

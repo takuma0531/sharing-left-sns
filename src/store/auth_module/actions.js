@@ -52,14 +52,12 @@ const editUser = async ({ commit }, newUserInfo) => {
   }
 };
 
-const deleteUser = async ({ commit }, password) => {
+const deleteUser = async ({ commit }) => {
   try {
     const token = jwtService.getToken();
     if (!token) return;
     apiService.setToken();
-    const res = await apiService.api.delete('/users', {
-      data: { password: password },
-    });
+    const res = await apiService.api.delete('/users');
     console.log(res.data); // Successfully deleted
     router.push('/explore');
   } catch (err) {
