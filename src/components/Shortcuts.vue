@@ -6,9 +6,7 @@
         Home
       </span>
     </router-link>
-    <router-link
-      :to="{ path: `/profile/${nickname}`, query: { id: userId } }"
-    >
+    <router-link :to="{ path: `/profile/${nickname}`, query: { id: userId } }">
       <font-awesome-icon icon="user" />
       Profile
     </router-link>
@@ -20,9 +18,14 @@
 
 <script>
 import { mapGetters, mapMutations } from 'vuex';
-import { SHOW_COMMENT_MODAL } from '../store/types/mutations.type';
 
 export default {
+  props: {
+    showCommentModal: {
+      type: Function,
+      required: true,
+    },
+  },
   computed: {
     ...mapGetters(['userInfo']),
     nickname() {
@@ -31,9 +34,6 @@ export default {
     userId() {
       return this.userInfo._id;
     },
-  },
-  methods: {
-    ...mapMutations(['showCommentModal']),
   },
 };
 </script>

@@ -8,9 +8,12 @@
       ></div>
     </transition>
 
-    <comment-modal />
+    <comment-modal
+      :showCommentModal="showCommentModal"
+      :isShowCommentModal="isShowCommentModal"
+    />
 
-    <shortcuts />
+    <shortcuts :showCommentModal="showCommentModal" />
 
     <div class="posts">
       <post v-for="(post, index) in posts" :key="index" :post="post" />
@@ -21,7 +24,6 @@
 <script>
 import { CommentModal, Post, Shortcuts } from '../../components';
 import { mapGetters, mapMutations, mapActions } from 'vuex';
-import { SHOW_COMMENT_MODAL } from '../../store/types/mutations.type';
 import { GET_USER, GET_POSTS } from '../../store/types/actions.type';
 
 export default {
@@ -30,12 +32,19 @@ export default {
     Post,
     Shortcuts,
   },
+  data() {
+    return {
+      isShowCommentModal: false,
+    };
+  },
   computed: {
-    ...mapGetters(['isShowCommentModal', 'posts']),
+    ...mapGetters(['posts']),
   },
   methods: {
-    ...mapMutations([SHOW_COMMENT_MODAL]),
     ...mapActions([GET_USER, GET_POSTS]),
+    showCommentModal() {
+      this.isShowCommentModal = !this.isShowCommentModal;
+    },
   },
   created() {
     this.getUser();

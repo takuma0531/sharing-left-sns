@@ -1,6 +1,3 @@
-const state = {
-  isShowCommentModal: false,
-  isShowUserEditionModal: false,
-};
+const state = {};
 
 export default state;

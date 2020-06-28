@@ -34,20 +34,28 @@
 
 <script>
 import { mapGetters, mapMutations, mapActions } from 'vuex';
-import { SHOW_USER_EDITION_MODAL } from '../../store/types/mutations.type';
 import { GET_USER, EDIT_USER } from '../../store/types/actions.type';
 
 export default {
+  props: {
+    isShowUserEditionModal: {
+      type: Boolean,
+      required: true,
+    },
+    showUserEditionModal: {
+      type: Function,
+      required: true,
+    },
+  },
   data() {
     return {
       userData: null,
     };
   },
   computed: {
-    ...mapGetters(['isShowUserEditionModal', 'userInfo']),
+    ...mapGetters(['userInfo']),
   },
   methods: {
-    ...mapMutations([SHOW_USER_EDITION_MODAL]),
     ...mapActions([GET_USER, EDIT_USER]),
     edit() {
       this.editUser(this.userData);

@@ -1,6 +1,3 @@
-const getters = {
-  isShowCommentModal: (state) => state.isShowCommentModal,
-  isShowUserEditionModal: (state) => state.isShowUserEditionModal,
-};
+const getters = {};
 
 export default getters;

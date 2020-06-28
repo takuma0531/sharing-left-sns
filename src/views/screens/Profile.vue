@@ -9,7 +9,10 @@
       ></div>
     </transition>
 
-    <user-edition-modal />
+    <user-edition-modal
+      :showUserEditionModal="showUserEditionModal"
+      :isShowUserEditionModal="isShowUserEditionModal"
+    />
 
     <button @click="showUserEditionModal">
       Edit Profile
@@ -20,19 +23,25 @@
 <script>
 import { UserEditionModal } from '../../components';
 import { mapGetters, mapMutations, mapActions } from 'vuex';
-import { SHOW_USER_EDITION_MODAL } from '../../store/types/mutations.type';
 import { GET_PROFILE, EDIT_USER } from '../../store/types/actions.type';
 
 export default {
   components: {
     UserEditionModal,
   },
+  data() {
+    return {
+      isShowUserEditionModal: false,
+    };
+  },
   computed: {
-    ...mapGetters(['profile', 'isShowUserEditionModal']),
+    ...mapGetters(['profile']),
   },
   methods: {
-    ...mapMutations([SHOW_USER_EDITION_MODAL]),
     ...mapActions([GET_PROFILE, EDIT_USER]),
+    showUserEditionModal() {
+      this.isShowUserEditionModal = !this.isShowUserEditionModal;
+    },
   },
   created() {
     this.getProfile(this.$route.query.id);
