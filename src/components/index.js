@@ -4,3 +4,8 @@ export const Post = () => import('./Post');
 export const Shortcuts = () => import('./Shortcuts');
 export const CommentModal = () => import('./modals/CommentModal');
 export const UserEditionModal = () => import('./modals/UserEditionModal');
+
+// Button component
+export const ModalCloseButton = () => import('./button/ModalCloseButton');
+export const PostShareButton = () => import('./button/PostShareButton');
+export const UserDeleteButton = () => import('./button/UserDeleteButton');
