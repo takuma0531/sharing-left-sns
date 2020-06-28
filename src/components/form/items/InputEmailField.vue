@@ -20,7 +20,6 @@ export default {
   },
   methods: {
     emitToParent(e) {
-      console.log(e);
       this.$emit('email', this.email);
     },
   },

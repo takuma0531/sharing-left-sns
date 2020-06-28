@@ -2,13 +2,13 @@
   <div class="form">
     <form @submit.prevent="emitToParent">
       <!-- nickname -->
-      <input-nickname-field :nickname="setNickname" />
+      <input-nickname-field v-on:nickname="setNickname" />
 
       <!-- email -->
-      <input-email-field :email="setEmail" />
+      <input-email-field v-on:email="setEmail" />
 
       <!-- password -->
-      <input-password-field :password="setPassword" />
+      <input-password-field v-on:password="setPassword" />
 
       <button class="btn">{{ formType }}</button>
     </form>
@@ -45,7 +45,6 @@ export default {
   },
   methods: {
     emitToParent(e) {
-      console.log(e);
       this.$emit('userInfo', this.userInfo);
     },
     setNickname(nickname) {
