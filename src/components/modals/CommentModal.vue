@@ -22,6 +22,8 @@
 
 <script>
 import { mapGetters, mapMutations, mapActions } from 'vuex';
+import { SHOW_COMMENT_MODAL } from '../../store/types/mutations.type';
+import { ADD_POST } from '../../store/types/actions.type';
 
 export default {
   data() {

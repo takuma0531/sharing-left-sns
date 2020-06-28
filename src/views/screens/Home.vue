@@ -21,6 +21,8 @@
 <script>
 import { CommentModal, Post, Shortcuts } from '../../components';
 import { mapGetters, mapMutations, mapActions } from 'vuex';
+import { SHOW_COMMENT_MODAL } from '../../store/types/mutations.type';
+import { GET_USER, GET_POSTS } from '../../store/types/actions.type';
 
 export default {
   components: {
@@ -28,15 +30,12 @@ export default {
     Post,
     Shortcuts,
   },
-  data() {
-    return {};
-  },
   computed: {
     ...mapGetters(['isShowCommentModal', 'posts']),
   },
   methods: {
-    ...mapMutations(['showCommentModal']),
-    ...mapActions(['getUser', 'getPosts']),
+    ...mapMutations([SHOW_COMMENT_MODAL]),
+    ...mapActions([GET_USER, GET_POSTS]),
   },
   created() {
     this.getUser();

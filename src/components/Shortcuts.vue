@@ -20,11 +20,9 @@
 
 <script>
 import { mapGetters, mapMutations } from 'vuex';
+import { SHOW_COMMENT_MODAL } from '../store/types/mutations.type';
 
 export default {
-  data() {
-    return {};
-  },
   computed: {
     ...mapGetters(['userInfo']),
     nickname() {

@@ -15,7 +15,7 @@ const registerUser = async ({ commit }, userInfo) => {
 
 const loginUser = async ({ commit }, userInfo) => {
   try {
-    const res = await apiService.api.post('/login', userInfo);
+    const res = await apiService.api.post('/auth/login', userInfo);
     commit(SET_TOKENS, res.data);
     router.push('/home');
   } catch (err) {

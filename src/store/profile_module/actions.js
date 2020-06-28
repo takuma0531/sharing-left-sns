@@ -2,9 +2,7 @@ import apiService from '../../utils/api.service';
 import router from '../../router';
 
 // import mutations type
-import {
-  SET_PROFILE,
-} from '../types/mutations.type';
+import { SET_PROFILE } from '../types/mutations.type';
 
 const getProfile = async ({ commit }, userId) => {
   try {
