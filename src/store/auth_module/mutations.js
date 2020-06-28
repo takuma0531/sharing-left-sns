@@ -14,10 +14,15 @@ const setUser = (state, userInfo) => {
   state.userInfo = userInfo;
 };
 
+const enableUserDelete = (state) => {
+  state.enabledUserDelete = true;
+};
+
 const mutations = {
   setTokens,
   clearTokens,
   setUser,
+  enableUserDelete
 };
 
 export default mutations;

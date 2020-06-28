@@ -1,5 +1,10 @@
 import apiService from '../../utils/api.service';
-import { SET_TOKENS, CLEAR_TOKENS, SET_USER } from '../types/mutations.type';
+import {
+  SET_TOKENS,
+  CLEAR_TOKENS,
+  SET_USER,
+  ENABLE_USER_DELETE,
+} from '../types/mutations.type';
 import router from '../../router';
 import jwtService from '../../utils/jwt.service';
 
@@ -54,11 +59,12 @@ const editUser = async ({ commit }, newUserInfo) => {
 
 const deleteUser = async ({ commit }) => {
   try {
-    const token = jwtService.getToken();
-    if (!token) return;
+    const refreshToken = jwtService.getToken();
+    if (!refreshToken) return;
     apiService.setToken();
     const res = await apiService.api.delete('/users');
     console.log(res.data); // Successfully deleted
+    commit(CLEAR_TOKENS);
     router.push('/explore');
   } catch (err) {
     console.log(err.response.data);
@@ -84,7 +90,8 @@ const checkPassword = async ({ commit }, password) => {
     if (!refreshToken) return;
     apiService.setToken();
     const res = await apiService.api.post('/auth/verifying-password', password);
-    console.log(res.data);
+    console.log(res.data); // You can change your nickname and email.
+    commit(ENABLE_USER_DELETE);
   } catch (err) {
     console.log(err.response.data);
   }

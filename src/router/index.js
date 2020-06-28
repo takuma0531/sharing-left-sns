@@ -2,7 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import store from '../store';
 import { AUTHENTICATE_USER } from '../store/types/actions.type';
-import { Explore, SignIn, SignUp, Home, Profile } from '../views';
+import { Explore, SignIn, SignUp, Home, Profile, Setting } from '../views';
 
 Vue.use(VueRouter);
 
@@ -32,6 +32,11 @@ const routes = [
     name: 'Profile',
     component: Profile,
   },
+  {
+    path: '/setting/:nickname',
+    name: 'Setting',
+    component: Setting,
+  }
 ];
 
 const router = new VueRouter({

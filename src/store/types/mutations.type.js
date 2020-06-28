@@ -2,6 +2,7 @@
 export const SET_TOKENS = 'setTokens';
 export const CLEAR_TOKENS = 'clearTokens';
 export const SET_USER = 'setUser';
+export const ENABLE_USER_DELETE = 'enableUserDelete';
 
 // profile module
 export const SET_PROFILE = 'setProfile';

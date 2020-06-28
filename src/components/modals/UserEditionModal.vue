@@ -40,8 +40,8 @@ export default {
   },
   methods: {
     ...mapActions([GET_USER, EDIT_USER]),
-    edit() {
-      this.editUser(this.userData);
+    edit(userInfo) {
+      this.editUser(userInfo);
       this.showUserEditionModal();
     }
   },

@@ -1,6 +1,6 @@
 <template>
   <div class="comment-btn">
-    <button @click="close">
+    <button @click="show">
       Share what you left
     </button>
   </div>
@@ -9,7 +9,7 @@
 <script>
 export default {
   props: {
-    close: {
+    show: {
       type: Function,
       required: true,
     },

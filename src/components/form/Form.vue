@@ -68,7 +68,7 @@ export default {
     isNeededPassword() {
       if (this.formType === "Sign up") return true;
       if (this.formType === "Sign in") return true;
-      if (this.formType === "Password") return true;
+      if (this.formType === "Delete") return true;
       return false;
     }
   },
@@ -88,6 +88,7 @@ export default {
   },
   created() {
     if (!this.userData) return;
+    this.userInfo = this.userData;
     this.previousNickname = this.userData.nickname;
     this.previousEmail = this.userData.email;
   }

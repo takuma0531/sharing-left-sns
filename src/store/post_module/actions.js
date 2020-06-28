@@ -41,7 +41,7 @@ const deletePost = async ({ commit }, postId) => {
     await apiService.api.delete(`posts/${postId}`);
     commit(DELETE_POST, postId);
   } catch (err) {
-    console.log(err);
+    console.log(err.response.data);
   }
 };
 
