@@ -2,13 +2,17 @@
   <div class="form">
     <form @submit.prevent="emitToParent">
       <!-- nickname -->
-      <input-nickname-field v-on:nickname="setNickname" />
+      <input-nickname-field
+        v-if="isNeededNickname"
+        v-on:nickname="setNickname"
+        :previousNickname="previousNickname"
+      />
 
       <!-- email -->
-      <input-email-field v-on:email="setEmail" />
+      <input-email-field v-if="isNeededEmail" v-on:email="setEmail" :previousEmail="previousEmail" />
 
       <!-- password -->
-      <input-password-field v-on:password="setPassword" />
+      <input-password-field v-if="isNeededPassword" v-on:password="setPassword" />
 
       <button class="btn">{{ formType }}</button>
     </form>
@@ -19,33 +23,58 @@
 import {
   InputNicknameField,
   InputEmailField,
-  InputPasswordField,
-} from '../../components';
+  InputPasswordField
+} from "../../components";
 
 export default {
   components: {
     InputNicknameField,
     InputEmailField,
-    InputPasswordField,
+    InputPasswordField
   },
   props: {
+    userData: {
+      type: Object,
+      required: false
+    },
     formType: {
       type: String,
-      required: true,
-    },
+      required: true
+    }
   },
   data() {
     return {
       userInfo: {
-        nickname: '',
-        email: '',
-        password: '',
+        nickname: "",
+        email: "",
+        password: ""
       },
+      previousNickname: "",
+      previousEmail: ""
     };
+  },
+  computed: {
+    isNeededNickname() {
+      if (this.formType === "Sign up") return true;
+      if (this.formType === "Change") return true;
+      return false;
+    },
+    isNeededEmail() {
+      if (this.formType === "Sign up") return true;
+      if (this.formType === "Sign in") return true;
+      if (this.formType === "Change") return true;
+      return false;
+    },
+    isNeededPassword() {
+      if (this.formType === "Sign up") return true;
+      if (this.formType === "Sign in") return true;
+      if (this.formType === "Password") return true;
+      return false;
+    }
   },
   methods: {
     emitToParent(e) {
-      this.$emit('userInfo', this.userInfo);
+      this.$emit("userInfo", this.userInfo);
     },
     setNickname(nickname) {
       this.userInfo.nickname = nickname;
@@ -55,8 +84,12 @@ export default {
     },
     setPassword(password) {
       this.userInfo.password = password;
-    },
+    }
   },
-  mounted() {},
+  created() {
+    if (!this.userData) return;
+    this.previousNickname = this.userData.nickname;
+    this.previousEmail = this.userData.email;
+  }
 };
 </script>

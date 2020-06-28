@@ -25,7 +25,7 @@ const loginUser = async ({ commit }, userInfo) => {
 
 const logoutUser = ({ commit }) => {
   commit(CLEAR_TOKENS);
-  router.push('/');
+  router.push('/explore');
 };
 
 const getUser = async ({ commit }) => {
