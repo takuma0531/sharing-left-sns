@@ -10,16 +10,18 @@
       <font-awesome-icon icon="user" />
       Profile
     </router-link>
-    <button class="comment-btn" @click="showCommentModal">
-      Share what you left
-    </button>
+    <post-share-button :close="showCommentModal" />
   </div>
 </template>
 
 <script>
+import { PostShareButton } from '../components';
 import { mapGetters, mapMutations } from 'vuex';
 
 export default {
+  components: {
+    PostShareButton,
+  },
   props: {
     showCommentModal: {
       type: Function,
