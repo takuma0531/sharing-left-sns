@@ -25,20 +25,20 @@
           <input type="submit" value="Share" />
         </form>
     
-        <modal-close-button :close="showUserEditionModal" />
+        <close-button :close="showUserEditionModal" />
       </div>
     </transition>
   </div>
 </template>
 
 <script>
-import { ModalCloseButton } from '../../components';
+import { CloseButton } from '../../components';
 import { mapGetters, mapMutations, mapActions } from 'vuex';
 import { GET_USER, EDIT_USER } from '../../store/types/actions.type';
 
 export default {
   components: {
-    ModalCloseButton,
+    CloseButton,
   },
   props: {
     isShowUserEditionModal: {

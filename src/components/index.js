@@ -6,6 +6,6 @@ export const CommentModal = () => import('./modals/CommentModal');
 export const UserEditionModal = () => import('./modals/UserEditionModal');
 
 // Button component
-export const ModalCloseButton = () => import('./button/ModalCloseButton');
+export const CloseButton = () => import('./button/CloseButton');
 export const PostShareButton = () => import('./button/PostShareButton');
 export const UserDeleteButton = () => import('./button/UserDeleteButton');

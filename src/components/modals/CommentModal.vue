@@ -12,20 +12,21 @@
           />
           <input type="submit" value="Share" />
         </form>
-        <button class="button" @click="showCommentModal">
-          Close
-        </button>
+        <close-button :close="showCommentModal" />
       </div>
     </transition>
   </div>
 </template>
 
 <script>
+import { CloseButton } from '../../components';
 import { mapGetters, mapMutations, mapActions } from 'vuex';
-import { SHOW_COMMENT_MODAL } from '../../store/types/mutations.type';
 import { ADD_POST } from '../../store/types/actions.type';
 
 export default {
+  components: {
+    CloseButton,
+  },
   props: {
     isShowCommentModal: {
       type: Boolean,
