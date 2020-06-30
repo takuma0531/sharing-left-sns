@@ -1,27 +1,27 @@
 <template>
   <div class="password-modal">
     <div class="password-form-container" v-if="!enabledUserDelete">
-      <Form v-on:userInfo="onSubmit" :formType="formType" />
+      <form-user v-on:userInfo="onSubmit" :formType="formType"></form-user>
     </div>
 
-    <user-delete-button v-if="enabledUserDelete" />
+    <button-user-delete v-if="enabledUserDelete"></button-user-delete>
   </div>
 </template>
 
 <script>
-import { UserDeleteButton, Form } from "../../components";
+import { ButtonUserDelete, FormUser } from "../components";
 import { mapGetters, mapActions } from "vuex";
-import { CHECK_PASSWORD } from "../../store/types/actions.type";
+import { CHECK_PASSWORD } from "../store/types/actions.type";
 
 export default {
   data() {
     return {
-      formType: 'Delete'
+      formType: "Delete"
     };
   },
   components: {
-    UserDeleteButton,
-    Form
+    ButtonUserDelete,
+    FormUser
   },
   computed: {
     ...mapGetters(["enabledUserDelete"])

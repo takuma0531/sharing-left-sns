@@ -2,7 +2,7 @@
   <div class="comment-modal" v-if="isShowCommentModal">
     <transition name="slide" appear>
       <div class="modal">
-        <form @submit.prevent @submit="add">
+        <form @submit.prevent @submit="add" enctype="multipart/form-data">
           <input
             type="text"
             id="text"
@@ -10,45 +10,49 @@
             placeholder="Share what you lost here..."
             v-model="comment"
           />
+          <input type="file" id="img" name="img" accept="image/*" @change="onChange($event)" />
           <input type="submit" value="Share" />
         </form>
-        <close-button :close="showCommentModal" />
+        <button-close :close="showCommentModal"></button-close>
       </div>
     </transition>
   </div>
 </template>
 
 <script>
-import { CloseButton } from '../../components';
-import { mapGetters, mapMutations, mapActions } from 'vuex';
-import { ADD_POST } from '../../store/types/actions.type';
+import { ButtonClose } from "../components";
+import { mapGetters, mapMutations, mapActions } from "vuex";
+import { ADD_POST } from "../store/types/actions.type";
 
 export default {
   components: {
-    CloseButton,
+    ButtonClose
   },
   props: {
     isShowCommentModal: {
       type: Boolean,
-      required: true,
+      required: true
     },
     showCommentModal: {
       type: Function,
-      required: true,
-    },
+      required: true
+    }
   },
   data() {
     return {
-      comment: null,
+      comment: null
     };
   },
   methods: {
-    ...mapActions(['addPost']),
+    ...mapActions(["addPost"]),
     add() {
       this.addPost(this.comment);
       this.showCommentModal();
       this.comment = null;
     },
-  },
+    onChange(event) {
+      console.log(event);
+    }
+  }
 };
 </script>

@@ -5,16 +5,14 @@
       <li>setting2</li>
       <li>setting3</li>
       <li>setting4</li>
-      <li @click="isShow = !isShow">
-        Delete Account
-      </li>
+      <li @click="isShow = !isShow">Delete Account</li>
     </ul>
-    <password-modal v-if="isShow" />
+    <modal-password v-if="isShow"></modal-password>
   </div>
 </template>
 
 <script>
-import { PasswordModal } from "../../components";
+import { ModalPassword } from "../../components";
 
 export default {
   data() {
@@ -23,7 +21,7 @@ export default {
     };
   },
   components: {
-    PasswordModal
+    ModalPassword
   }
 };
 </script>

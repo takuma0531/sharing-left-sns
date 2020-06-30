@@ -1,15 +1,15 @@
 <template>
   <div class="form-container">
-    <Form v-on:userInfo="onSubmit" :formType="formType" />
+    <form-user v-on:userInfo="onSubmit" :formType="formType"></form-user>
   </div>
 </template>
 
 <script>
-import { Form, Shortcuts } from '../../components';
+import { FormUser, Shortcuts } from '../../components';
 
 export default {
   components: {
-    Form,
+    FormUser,
   },
   data() {
     return {

@@ -2,23 +2,21 @@ export const Post = () => import('./Post');
 export const Shortcuts = () => import('./Shortcuts');
 
 // Layouts component
-export const Footer = () => import('./layouts/Footer');
-export const NavBar = () => import('./layouts/NavBar');
+export const TheFooter = () => import('./TheFooter');
+export const TheNavBar = () => import('./TheNavBar');
 
 // Modal component
-export const CommentModal = () => import('./modals/CommentModal');
-export const PasswordModal = () => import('./modals/PasswordModal');
-export const UserEditionModal = () => import('./modals/UserEditionModal');
+export const ModalComment = () => import('./ModalComment');
+export const ModalPassword = () => import('./ModalPassword');
+export const ModalUserEdition = () => import('./ModalUserEdition');
 
 // Button component
-export const CloseButton = () => import('./button/CloseButton');
-export const PostShareButton = () => import('./button/PostShareButton');
-export const UserDeleteButton = () => import('./button/UserDeleteButton');
+export const ButtonClose = () => import('./ButtonClose');
+export const ButtonPostShare = () => import('./ButtonPostShare');
+export const ButtonUserDelete = () => import('./ButtonUserDelete');
 
 // Form component
-export const Form = () => import('./form/Form');
-export const InputEmailField = () => import('./form/items/InputEmailField');
-export const InputNicknameField = () =>
-  import('./form/items/InputNicknameField');
-export const InputPasswordField = () =>
-  import('./form/items/InputPasswordField');
+export const FormUser = () => import('./FormUser');
+export const FormUserEmailField = () => import('./FormUserEmailField');
+export const FormUserNicknameField = () => import('./FormUserNicknameField');
+export const FormUserPasswordField = () => import('./FormUserPasswordField');

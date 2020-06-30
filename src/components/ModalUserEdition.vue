@@ -2,22 +2,22 @@
   <div class="user-edition-modal" v-if="isShowUserEditionModal">
     <transition name="slide" appear>
       <div class="modal">
-        <Form v-on:userInfo="edit" :userData="userData" :formType="formType" />
-        <close-button :close="showUserEditionModal" />
+        <form-user v-on:userInfo="edit" :userData="userData" :formType="formType"></form-user>
+        <button-close :close="showUserEditionModal"></button-close>
       </div>
     </transition>
   </div>
 </template>
 
 <script>
-import { Form, CloseButton } from "../../components";
+import { FormUser, ButtonClose } from "../components";
 import { mapGetters, mapMutations, mapActions } from "vuex";
-import { GET_USER, EDIT_USER } from "../../store/types/actions.type";
+import { GET_USER, EDIT_USER } from "../store/types/actions.type";
 
 export default {
   components: {
-    Form,
-    CloseButton,
+    FormUser,
+    ButtonClose
   },
   props: {
     isShowUserEditionModal: {

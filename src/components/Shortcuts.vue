@@ -10,17 +10,17 @@
     <router-link :to="{ path: `/setting/${nickname}`, query: { id: userId } }">
       <font-awesome-icon icon="cog" />Setting
     </router-link>
-    <post-share-button :show="showCommentModal" />
+    <button-post-share :show="showCommentModal"></button-post-share>
   </div>
 </template>
 
 <script>
-import { PostShareButton } from "../components";
+import { ButtonPostShare } from "../components";
 import { mapGetters, mapMutations } from "vuex";
 
 export default {
   components: {
-    PostShareButton
+    ButtonPostShare
   },
   props: {
     showCommentModal: {

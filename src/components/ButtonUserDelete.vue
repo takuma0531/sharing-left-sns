@@ -7,7 +7,7 @@
 
 <script>
 import { mapActions } from "vuex";
-import { DELETE_USER } from "../../store/types/actions.type";
+import { DELETE_USER } from "../store/types/actions.type";
 
 export default {
   methods: {

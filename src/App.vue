@@ -1,20 +1,20 @@
 <template>
   <div id="app">
-    <NavBar />
+    <the-nav-bar></the-nav-bar>
     <section class="container">
       <router-view />
     </section>
-    <Footer />
+    <the-footer></the-footer>
   </div>
 </template>
 
 <script>
-import { Footer, NavBar } from "@/components";
+import { TheFooter, TheNavBar } from "@/components";
 
 export default {
   components: {
-    Footer,
-    NavBar
+    TheFooter,
+    TheNavBar
   },
   mounted() {}
 };

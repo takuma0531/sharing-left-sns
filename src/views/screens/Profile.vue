@@ -9,10 +9,10 @@
       ></div>
     </transition>
 
-    <user-edition-modal
+    <modal-user-edition
       :showUserEditionModal="showUserEditionModal"
       :isShowUserEditionModal="isShowUserEditionModal"
-    />
+    ></modal-user-edition>
 
     <button @click="showUserEditionModal">
       Edit Profile
@@ -21,13 +21,13 @@
 </template>
 <!-- TODO: protected from others editing -->
 <script>
-import { UserEditionModal } from '../../components';
+import { ModalUserEdition } from '../../components';
 import { mapGetters, mapMutations, mapActions } from 'vuex';
 import { GET_PROFILE, EDIT_USER } from '../../store/types/actions.type';
 
 export default {
   components: {
-    UserEditionModal,
+    ModalUserEdition,
   },
   data() {
     return {

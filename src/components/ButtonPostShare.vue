@@ -1,8 +1,6 @@
 <template>
   <div class="comment-btn">
-    <button @click="show">
-      Share what you left
-    </button>
+    <button @click="show">Share what you left</button>
   </div>
 </template>
 
@@ -11,8 +9,8 @@ export default {
   props: {
     show: {
       type: Function,
-      required: true,
-    },
-  },
+      required: true
+    }
+  }
 };
 </script>

@@ -8,10 +8,10 @@
       ></div>
     </transition>
 
-    <comment-modal
+    <modal-comment
       :showCommentModal="showCommentModal"
       :isShowCommentModal="isShowCommentModal"
-    />
+    ></modal-comment>
 
     <shortcuts :showCommentModal="showCommentModal" />
     <div class="posts" v-if="posts">
@@ -21,13 +21,13 @@
 </template>
 
 <script>
-import { CommentModal, Post, Shortcuts } from '../../components';
+import { ModalComment, Post, Shortcuts } from '../../components';
 import { mapGetters, mapMutations, mapActions } from 'vuex';
 import { GET_USER, GET_POSTS } from '../../store/types/actions.type';
 
 export default {
   components: {
-    CommentModal,
+    ModalComment,
     Post,
     Shortcuts,
   },

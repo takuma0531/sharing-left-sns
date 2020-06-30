@@ -2,17 +2,21 @@
   <div class="form">
     <form @submit.prevent="emitToParent">
       <!-- nickname -->
-      <input-nickname-field
+      <form-user-nickname-field
         v-if="isNeededNickname"
         v-on:nickname="setNickname"
         :previousNickname="previousNickname"
-      />
+      ></form-user-nickname-field>
 
       <!-- email -->
-      <input-email-field v-if="isNeededEmail" v-on:email="setEmail" :previousEmail="previousEmail" />
+      <form-user-email-field
+        v-if="isNeededEmail"
+        v-on:email="setEmail"
+        :previousEmail="previousEmail"
+      ></form-user-email-field>
 
       <!-- password -->
-      <input-password-field v-if="isNeededPassword" v-on:password="setPassword" />
+      <form-user-password-field v-if="isNeededPassword" v-on:password="setPassword"></form-user-password-field>
 
       <button class="btn">{{ formType }}</button>
     </form>
@@ -21,16 +25,16 @@
 
 <script>
 import {
-  InputNicknameField,
-  InputEmailField,
-  InputPasswordField
-} from "../../components";
+  FormUserNicknameField,
+  FormUserEmailField,
+  FormUserPasswordField
+} from "../components";
 
 export default {
   components: {
-    InputNicknameField,
-    InputEmailField,
-    InputPasswordField
+    FormUserNicknameField,
+    FormUserEmailField,
+    FormUserPasswordField
   },
   props: {
     userData: {
