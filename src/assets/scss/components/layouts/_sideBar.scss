@@ -1,0 +1,23 @@
+.shortcuts {
+  display: flex;
+  flex-direction: column;
+
+  .shortcut {
+    width: 100%;
+    margin: 10px 0;
+
+    svg {
+      font-size: 25px;
+    }
+
+    span {
+      font-size: 20px;
+      margin-left: 15px;
+    }
+  }
+
+  .shortcut:hover {
+    background: rgba(0, 128, 0, 0.244);
+    border-radius: 20px;
+  }
+}

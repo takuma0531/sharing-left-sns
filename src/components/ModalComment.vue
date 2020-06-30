@@ -22,28 +22,23 @@
 <script>
 import { ButtonClose } from "../components";
 import { mapGetters, mapMutations, mapActions } from "vuex";
+import { SHOW_COMMENT_MODAL } from "../store/types/mutations.type.js";
 import { ADD_POST } from "../store/types/actions.type";
 
 export default {
   components: {
     ButtonClose
   },
-  props: {
-    isShowCommentModal: {
-      type: Boolean,
-      required: true
-    },
-    showCommentModal: {
-      type: Function,
-      required: true
-    }
-  },
   data() {
     return {
       comment: null
     };
   },
+  computed: {
+    ...mapGetters(["isShowCommentModal"])
+  },
   methods: {
+    ...mapMutations([SHOW_COMMENT_MODAL]),
     ...mapActions(["addPost"]),
     add() {
       this.addPost(this.comment);
@@ -53,6 +48,6 @@ export default {
     onChange(event) {
       console.log(event);
     }
-  }
+  },
 };
 </script>

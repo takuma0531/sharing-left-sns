@@ -1,9 +1,9 @@
 export const Post = () => import('./Post');
-export const Shortcuts = () => import('./Shortcuts');
 
 // Layouts component
 export const TheFooter = () => import('./TheFooter');
 export const TheNavBar = () => import('./TheNavBar');
+export const TheSideBar = () => import('./TheSideBar');
 
 // Modal component
 export const ModalComment = () => import('./ModalComment');

@@ -3,19 +3,19 @@
     <router-link
       :to="{
         path: `/profile/${nickname}`,
-        query: { id: userId },
+        query: { id: posterId },
       }"
-    >
-      Nickname: {{ nickname }}
-    </router-link>
+    >Nickname: {{ nickname }}</router-link>
     <br />
     Post Content: {{ post.content }}
-    <button @click="deletePost(post._id)">Delete</button>
+    <div v-if="userId === posterId">
+      <button @click="deletePost(post._id)">Delete</button>
+    </div>
   </div>
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   data() {
@@ -23,19 +23,23 @@ export default {
   },
   props: {
     post: {
-      type: Object,
-    },
+      type: Object
+    }
   },
   computed: {
+    ...mapGetters(["userInfo"]),
+    userId() {
+      return this.userInfo._id;
+    },
     nickname() {
       return this.post._poster.nickname;
     },
-    userId() {
+    posterId() {
       return this.post._poster._id;
-    },
+    }
   },
   methods: {
-    ...mapActions(['deletePost']),
-  },
+    ...mapActions(["deletePost"])
+  }
 };
 </script>

@@ -2,6 +2,11 @@
   <div id="app">
     <the-nav-bar></the-nav-bar>
     <section class="container">
+      <transition name="fade" appear>
+        <div class="modal-overlay" v-if="isShowCommentModal" @click="showCommentModal"></div>
+      </transition>
+      <the-side-bar></the-side-bar>
+      <modal-comment></modal-comment>
       <router-view />
     </section>
     <the-footer></the-footer>
@@ -9,13 +14,22 @@
 </template>
 
 <script>
-import { TheFooter, TheNavBar } from "@/components";
+import { TheFooter, TheNavBar, TheSideBar, ModalComment } from "@/components";
+import { mapGetters, mapMutations } from "vuex";
+import { SHOW_COMMENT_MODAL } from "./store/types/mutations.type.js";
 
 export default {
   components: {
     TheFooter,
-    TheNavBar
+    TheNavBar,
+    TheSideBar,
+    ModalComment
   },
-  mounted() {}
+  computed: {
+    ...mapGetters(["isShowCommentModal"])
+  },
+  methods: {
+    ...mapMutations([SHOW_COMMENT_MODAL])
+  }
 };
 </script>

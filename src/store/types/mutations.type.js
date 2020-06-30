@@ -15,4 +15,3 @@ export const DELETE_POST = 'deletePost';
 
 // utils module
 export const SHOW_COMMENT_MODAL = 'showCommentModal';
-export const SHOW_USER_EDITION_MODAL = 'showUserEditionModal';
