@@ -1,13 +1,15 @@
 @import './components/layouts/footer';
 @import './components/layouts/navBar';
 @import './components//layouts/sideBar';
-@import './components/modalComment';
+@import './components/modal';
 @import './components/buttonPostShare';
 @import './components/post';
 
 @import './views/user-form';
 @import './views/explore';
 @import './views/screens/home';
+@import './views/screens/profile';
+@import './views/screens/setting';
 
 * {
   box-sizing: border-box;

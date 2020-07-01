@@ -1,0 +1,34 @@
+.profile {
+  height: 100%;
+
+  .user-account-info {
+    display: flex;
+    justify-content: space-between;
+    height: 20%;
+    margin-bottom: 10px;
+
+    .user-account-info-left {
+      .nickname {
+        text-align: center;
+        font-weight: bold;
+        font-size: 20px;
+      }
+    }
+  
+    .user-account-info-right {
+      button {
+        margin-top: 10px;
+        border-radius: 15px;
+        border: none;
+        background-color: green;
+        color: white;
+        padding: 5px 10px;
+      }
+    }
+  }
+
+  .posts {
+    height: 80%;
+    overflow: scroll;
+  }
+}
