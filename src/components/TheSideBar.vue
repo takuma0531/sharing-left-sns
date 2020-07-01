@@ -1,5 +1,5 @@
 <template>
-  <div class="shortcuts">
+  <div class="side-bar" v-if="isAuthenticated">
     <router-link to="/home" class="shortcut">
       <font-awesome-icon icon="home" />
       <span>Home</span>
@@ -26,7 +26,7 @@ export default {
     ButtonPostShare
   },
   computed: {
-    ...mapGetters(["userInfo"]),
+    ...mapGetters(["userInfo", "isAuthenticated"]),
     nickname() {
       return this.userInfo.nickname;
     },

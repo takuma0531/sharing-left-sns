@@ -5,9 +5,11 @@
       <transition name="fade" appear>
         <div class="modal-overlay" v-if="isShowCommentModal" @click="showCommentModal"></div>
       </transition>
-      <the-side-bar></the-side-bar>
       <modal-comment></modal-comment>
-      <router-view />
+      <div class="container-body">
+        <the-side-bar></the-side-bar>
+        <router-view class="article" />
+      </div>
     </section>
     <the-footer></the-footer>
   </div>
