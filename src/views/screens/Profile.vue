@@ -14,7 +14,7 @@
     <button @click="showUserEditionModal">Edit Profile</button>
   </div>
 </template>
-<!-- TODO: protected from others editing -->
+
 <script>
 import { ModalUserEdition } from "../../components";
 import { mapGetters, mapMutations, mapActions } from "vuex";

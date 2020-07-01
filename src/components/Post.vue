@@ -1,15 +1,37 @@
 <template>
   <div class="post">
-    <router-link
-      :to="{
+    <div class="post-left">
+      <div class="avatar">
+        <router-link
+          :to="{
         path: `/profile/${nickname}`,
         query: { id: posterId },
       }"
-    >Nickname: {{ nickname }}</router-link>
-    <br />
-    Post Content: {{ post.content }}
-    <div v-if="userId === posterId">
-      <button @click="deletePost(post._id)">Delete</button>
+        >
+          <img
+            src="@/assets/blank-profile-picture-973460_640.jpg"
+            style="width: 40px; border-radius: 50%;"
+          />
+        </router-link>
+      </div>
+    </div>
+    <div class="post-right">
+      <div class="user-name">
+        <router-link
+          :to="{
+        path: `/profile/${nickname}`,
+        query: { id: posterId },
+          }"
+        >
+          <span>{{ nickname }}</span>
+        </router-link>
+      </div>
+      <div class="content">{{ post.content }}</div>
+      <div class="additional-func">
+        <div v-if="userId === posterId" class="delete-btn">
+          <button @click="deletePost(post._id)">Delete</button>
+        </div>
+      </div>
     </div>
   </div>
 </template>

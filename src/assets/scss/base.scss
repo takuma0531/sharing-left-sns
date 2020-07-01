@@ -3,6 +3,7 @@
 @import './components//layouts/sideBar';
 @import './components/modalComment';
 @import './components/buttonPostShare';
+@import './components/post';
 
 @import './views/user-form';
 @import './views/explore';
@@ -14,27 +15,42 @@
   padding: 0;
 }
 
+html, body {
+  height: 100%;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   color: #2c3e50;
+  height: 100%;
+}
+
+.nav-bar {
+  height: 10%;
 }
 
 .container {
+  height: 88%;
   max-width: 1200px;
   margin: auto;
 
-
   .container-body {
+    height: 100%;
     padding: 0.7rem 2rem;
     display: flex;
-    
+
     .article {
+      height: 100%;
       width: 100%;
+      max-height: 100%;
       max-width: 600px;
       margin: 0 40px;
-      background-color: pink;
     }
   }
+}
+
+.footer {
+  height: 2%;
 }
 
 a {

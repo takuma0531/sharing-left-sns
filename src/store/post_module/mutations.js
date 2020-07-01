@@ -1,9 +1,11 @@
 const addPost = (state, { post }) => {
+  state.posts.reverse();
   state.posts.push(post);
+  state.posts.reverse();
 };
 
 const setPosts = (state, { posts }) => {
-  state.posts = posts;
+  state.posts = posts.reverse();
 };
 
 const setPost = (state, { post }) => {

@@ -1,2 +1,41 @@
 .post {
+  padding: 10px;
+  border: 0.1px solid rgba(0, 0, 0, 0.115);
+  // border-top: none;
+  display: flex;
+
+  .post-left {
+  }
+
+  .post-right {
+    margin: 0 10px;
+    width: 100%;
+
+    .user-name {
+      span {
+        font-weight: bold;
+      }
+    }
+
+    .content {
+      margin-top: 5px;
+    }
+
+    .additional-func {
+      height: 30px;
+
+      .delete-btn {
+        text-align: right;
+
+        button {
+          font-size: 11px;
+          border-radius: 15px;
+          border: none;
+          background-color: red;
+          color: white;
+          padding: 5px 10px;
+        }
+      }
+    }
+  }
 }
