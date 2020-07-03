@@ -1,5 +1,27 @@
-.setting {
+.setting-home {
   ul {
     list-style-type: none;
+
+    li {
+      padding: 10px;
+      border: 0.11px solid rgba(0, 0, 0, 0.102);
+      background: white;
+      display: flex;
+      justify-content: space-between;
+
+      .title {
+      }
+      .arrow {
+        color: rgba(0, 0, 0, 0.605);
+      }
+    }
+
+    li:hover {
+      filter: brightness(90%);
+    }
   }
+}
+
+.setting-account-delete {
+  
 }

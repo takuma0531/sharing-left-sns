@@ -1,8 +1,17 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import store from '../store';
-import { AUTHENTICATE_USER } from '../store/types/actions.type';
-import { Explore, SignIn, SignUp, Home, Profile, Setting } from '../views';
+import { GET_USER, AUTHENTICATE_USER } from '../store/types/actions.type';
+import {
+  Explore,
+  SignIn,
+  SignUp,
+  Home,
+  Profile,
+  Setting,
+  SettingHome,
+  SettingAccountDelete,
+} from '../views';
 
 Vue.use(VueRouter);
 
@@ -34,9 +43,20 @@ const routes = [
   },
   {
     path: '/setting/:nickname',
-    name: 'Setting',
     component: Setting,
-  }
+    children: [
+      {
+        path: '',
+        name: 'SettingHome',
+        component: SettingHome,
+      },
+      {
+        path: 'account/delete',
+        name: 'SettingAccountDelete',
+        component: SettingAccountDelete,
+      },
+    ],
+  },
 ];
 
 const router = new VueRouter({
@@ -53,7 +73,10 @@ router.beforeEach(async (to, from, next) => {
 
   // redirect to login page
   if (authRequired && !isAuthenticated) next('/user/sign-in');
-  else if (authRequired && isAuthenticated) next();
+  else if (authRequired && isAuthenticated) {
+    store.dispatch(GET_USER);
+    next();
+  }
   else next();
 });
 

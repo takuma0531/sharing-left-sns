@@ -20,11 +20,10 @@ export default {
     ...mapGetters(["posts"])
   },
   methods: {
-    ...mapActions([GET_USER, GET_POSTS])
+    ...mapActions([GET_POSTS])
   },
-  created() {
-    this.getUser();
-    this.getPosts();
+  async created() {
+    await this.getPosts();
   }
 };
 </script>

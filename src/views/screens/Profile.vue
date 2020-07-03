@@ -58,13 +58,12 @@ export default {
     ])
   },
   methods: {
-    ...mapActions([GET_PROFILE, GET_USER]),
+    ...mapActions([GET_PROFILE]),
     showUserEditionModal() {
       this.isShowUserEditionModal = !this.isShowUserEditionModal;
     }
   },
   async created() {
-    await this.getUser();
     await this.getProfile(this.$route.query.id);
   },
   mounted() {}

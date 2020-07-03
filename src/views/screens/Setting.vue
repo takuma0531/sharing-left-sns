@@ -1,27 +1,16 @@
 <template>
   <div class="setting">
-    <ul>
-      <li>setting1</li>
-      <li>setting2</li>
-      <li>setting3</li>
-      <li>setting4</li>
-      <li @click="isShow = !isShow">Delete Account</li>
-    </ul>
-    <modal-password v-if="isShow"></modal-password>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import { ModalPassword } from "../../components";
+import { SettingHome, SettingAccountDelete } from "../../views";
 
 export default {
-  data() {
-    return {
-      isShow: false
-    };
-  },
   components: {
-    ModalPassword
+    SettingHome,
+    SettingAccountDelete
   }
 };
 </script>

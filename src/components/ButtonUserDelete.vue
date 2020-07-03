@@ -1,6 +1,5 @@
 <template>
   <div class="user-delete-button">
-    <p>Are you sure you want to delete?</p>
     <button @click="deleteUser">Delete Account</button>
   </div>
 </template>

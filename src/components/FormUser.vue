@@ -72,7 +72,6 @@ export default {
     isNeededPassword() {
       if (this.formType === "Sign up") return true;
       if (this.formType === "Sign in") return true;
-      if (this.formType === "Delete") return true;
       return false;
     }
   },
@@ -88,7 +87,7 @@ export default {
     },
     setPassword(password) {
       this.userInfo.password = password;
-    }
+    },
   },
   created() {
     if (!this.userData) return;

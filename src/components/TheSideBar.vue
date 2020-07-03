@@ -8,7 +8,7 @@
       <font-awesome-icon icon="user" />
       <span>Profile</span>
     </router-link>
-    <router-link :to="{ path: `/setting/${nickname}`, query: { id: userId } }" class="shortcut">
+    <router-link :to="{ path: `/setting/${nickname}` }" class="shortcut">
       <font-awesome-icon icon="cog" />
       <span>Setting</span>
     </router-link>

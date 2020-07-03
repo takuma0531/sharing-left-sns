@@ -3,13 +3,15 @@
 @import './components//layouts/sideBar';
 @import './components/modal';
 @import './components/buttonPostShare';
+@import './components/buttonGoBack';
 @import './components/post';
 
-@import './views/user-form';
+@import './views/userForm';
 @import './views/explore';
 @import './views/screens/home';
 @import './views/screens/profile';
 @import './views/screens/setting';
+@import './views/screens/deleteAccountForm.scss';
 
 * {
   box-sizing: border-box;

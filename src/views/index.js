@@ -8,3 +8,6 @@ export const SignUp = () => import('./user-form/SignUp');
 export const Home = () => import('./screens/Home');
 export const Profile = () => import('./screens/Profile');
 export const Setting = () => import('./screens/Setting');
+export const SettingHome = () => import('./screens/SettingHome');
+export const SettingAccountDelete = () =>
+  import('./screens/SettingAccountDelete');
