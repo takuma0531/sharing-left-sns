@@ -5,7 +5,6 @@ const setProfile = (state, profile) => {
 };
 
 const addProfilePost = (state, post) => {
-  console.log('added profile post');
   state.posts.reverse();
   state.posts.push(post);
   state.posts.reverse();
