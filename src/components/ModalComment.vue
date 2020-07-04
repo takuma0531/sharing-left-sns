@@ -7,10 +7,13 @@
             type="text"
             id="text"
             name="text"
-            placeholder="Share what you lost here..."
+            placeholder="Share what you left..."
             v-model="comment"
           />
-          <input type="file" id="img" name="img" accept="image/*" @change="onChange($event)" />
+          <div class="btn-file">
+            <font-awesome-icon icon="image" class="img-icon" />
+            <input type="file" accept="image/*" @change="onChange($event)" />
+          </div>
           <input type="submit" value="Share" />
         </form>
         <button-close :close="showCommentModal"></button-close>
@@ -48,6 +51,6 @@ export default {
     onChange(event) {
       console.log(event);
     }
-  },
+  }
 };
 </script>
