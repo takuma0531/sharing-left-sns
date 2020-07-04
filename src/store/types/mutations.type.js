@@ -6,6 +6,8 @@ export const ENABLE_USER_DELETE = 'enableUserDelete';
 
 // profile module
 export const SET_PROFILE = 'setProfile';
+export const ADD_PROFILE_POST = 'addProfilePost';
+export const DELETE_PROFILE_POST = 'deleteProfilePost';
 
 // post module
 export const ADD_POST = 'addPost';

@@ -7,6 +7,7 @@
 @import './components/buttonUserDelete';
 @import './components/buttonClose';
 @import './components/post';
+@import './components/welcomeMessage';
 
 @import './views/userForm';
 @import './views/explore';
@@ -21,7 +22,8 @@
   padding: 0;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 

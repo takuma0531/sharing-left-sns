@@ -3,6 +3,9 @@
     <section class="posts" v-if="posts">
       <post v-for="(post, index) in posts" :key="index" :post="post" />
     </section>
+    <section class="welcome-message" v-if="posts.length === 0">
+      <h1>Enjoy sharing what you left!!</h1>
+    </section>
   </div>
 </template>
 

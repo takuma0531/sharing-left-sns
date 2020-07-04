@@ -25,6 +25,9 @@
 
     <div class="posts">
       <post v-for="(post, index) in profileUserPosts" :key="index" :post="post"></post>
+      <div class="welcome-message" v-if="profileUserPosts.length === 0">
+        <h1>Enjoy sharing what you left!!</h1>
+      </div>
     </div>
   </div>
 </template>
