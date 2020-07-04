@@ -17,6 +17,10 @@ Vue.use(VueRouter);
 
 const routes = [
   {
+    path: '/',
+    redirect: '/home',
+  },
+  {
     path: '/explore',
     name: 'Explore',
     component: Explore,
@@ -76,8 +80,7 @@ router.beforeEach(async (to, from, next) => {
   else if (authRequired && isAuthenticated) {
     store.dispatch(GET_USER);
     next();
-  }
-  else next();
+  } else next();
 });
 
 export default router;
