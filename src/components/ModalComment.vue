@@ -2,21 +2,28 @@
   <div class="comment-modal" v-if="isShowCommentModal">
     <transition name="slide" appear>
       <div class="modal">
-        <form @submit.prevent @submit="add" enctype="multipart/form-data">
-          <input
-            type="text"
-            id="text"
-            name="text"
-            placeholder="Share what you left..."
-            v-model="comment"
-          />
-          <div class="btn-file">
-            <font-awesome-icon icon="image" class="img-icon" />
-            <input type="file" accept="image/*" @change="onChange($event)" />
-          </div>
-          <input type="submit" value="Share" />
-        </form>
         <button-close :close="showCommentModal"></button-close>
+        <form @submit.prevent @submit="add" enctype="multipart/form-data">
+          <textarea
+            name="text"
+            id="text"
+            maxlength="120"
+            placeholder="Share what you left..."
+            required
+            v-model="comment"
+          ></textarea>
+          <div class="options">
+            <div class="btn-file">
+              <div class="icon-wrapper">
+                <font-awesome-icon icon="image" class="img-icon" />
+              </div>
+              <input type="file" accept="image/*" @change="onChange($event)" />
+            </div>
+            <div class="btn-submit-wrapper">
+              <input type="submit" value="Share" />
+            </div>
+          </div>
+        </form>
       </div>
     </transition>
   </div>

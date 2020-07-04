@@ -2,8 +2,8 @@
   <div class="user-edition-modal" v-if="isShowUserEditionModal">
     <transition name="slide" appear>
       <div class="modal">
-        <form-user v-on:userInfo="edit" :userData="userData" :formType="formType"></form-user>
         <button-close :close="showUserEditionModal"></button-close>
+        <form-user v-on:userInfo="edit" :userData="userData" :formType="formType"></form-user>
       </div>
     </transition>
   </div>

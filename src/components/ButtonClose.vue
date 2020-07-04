@@ -1,6 +1,8 @@
 <template>
   <div class="close-btn">
-    <button @click="close">Close</button>
+    <button @click="close">
+      <font-awesome-icon icon="times" class="img-icon" />
+    </button>
   </div>
 </template>
 

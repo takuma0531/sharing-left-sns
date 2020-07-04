@@ -1,25 +1,27 @@
 <template>
-  <div class="form">
-    <form @submit.prevent="emitToParent">
-      <!-- nickname -->
-      <form-user-nickname-field
-        v-if="isNeededNickname"
-        v-on:nickname="setNickname"
-        :previousNickname="previousNickname"
-      ></form-user-nickname-field>
+  <div class="form-container">
+    <div class="form">
+      <form @submit.prevent="emitToParent">
+        <!-- nickname -->
+        <form-user-nickname-field
+          v-if="isNeededNickname"
+          v-on:nickname="setNickname"
+          :previousNickname="previousNickname"
+        ></form-user-nickname-field>
 
-      <!-- email -->
-      <form-user-email-field
-        v-if="isNeededEmail"
-        v-on:email="setEmail"
-        :previousEmail="previousEmail"
-      ></form-user-email-field>
+        <!-- email -->
+        <form-user-email-field
+          v-if="isNeededEmail"
+          v-on:email="setEmail"
+          :previousEmail="previousEmail"
+        ></form-user-email-field>
 
-      <!-- password -->
-      <form-user-password-field v-if="isNeededPassword" v-on:password="setPassword"></form-user-password-field>
+        <!-- password -->
+        <form-user-password-field v-if="isNeededPassword" v-on:password="setPassword"></form-user-password-field>
 
-      <button class="btn">{{ formType }}</button>
-    </form>
+        <button class="btn">{{ formType }}</button>
+      </form>
+    </div>
   </div>
 </template>
 
@@ -87,7 +89,7 @@ export default {
     },
     setPassword(password) {
       this.userInfo.password = password;
-    },
+    }
   },
   created() {
     if (!this.userData) return;

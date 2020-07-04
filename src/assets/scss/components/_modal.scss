@@ -21,28 +21,6 @@
   border-radius: 16px;
 
   padding: 25px;
-
-  .btn-file {
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-  }
-
-  .btn-file input[type='file'] {
-    position: absolute;
-    top: 0;
-    right: 0;
-    min-width: 100%;
-    min-height: 100%;
-    font-size: 100px;
-    text-align: right;
-    filter: alpha(opacity=0);
-    opacity: 0;
-    outline: none;
-    background: white;
-    cursor: inherit;
-    display: block;
-  }
 }
 
 .fade-enter-active,
@@ -63,4 +41,92 @@
 .slide-enter,
 .slide-leave-to {
   transform: translateY(-50%) translateX(100vw);
+}
+
+// comment modal
+.comment-modal {
+  .close-btn {
+    text-align: right;
+  }
+
+  form {
+    margin: 5px 0;
+  }
+
+  #text {
+    resize: none;
+    font-size: 15px;
+    width: 340px;
+    height: 90px;
+    padding: 5px;
+    border: none;
+  }
+
+  #text:focus {
+    outline: none;
+  }
+
+  .options {
+    display: flex;
+
+    .btn-file {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+
+      .icon-wrapper {
+        margin: 1px;
+
+        .img-icon {
+          font-size: 20px;
+          vertical-align: middle;
+        }
+      }
+
+      input[type='file'] {
+        position: absolute;
+        top: 0;
+        right: 0;
+        min-width: 100%;
+        min-height: 100%;
+        font-size: 100px;
+        text-align: right;
+        filter: alpha(opacity=0);
+        opacity: 0;
+        outline: none;
+        background: white;
+        cursor: inherit;
+        display: block;
+      }
+    }
+
+    .btn-submit-wrapper {
+      width: 100%;
+      text-align: right;
+
+      input[type='submit'] {
+        padding: 5px 15px;
+        background: green;
+        border: none;
+        border-radius: 20px;
+        color: white;
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+// modal user edit
+.user-edition-modal {
+  .modal {
+    max-height: 500px;
+
+    .close-btn {
+      text-align: right;
+    }
+
+    .form-container {
+      margin: 10px 0 20px 0 !important;
+    }
+  }
 }
