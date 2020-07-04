@@ -4,6 +4,7 @@
 @import './components/modal';
 @import './components/buttonPostShare';
 @import './components/buttonGoBack';
+@import './components/buttonUserDelete';
 @import './components/post';
 
 @import './views/userForm';
@@ -11,7 +12,7 @@
 @import './views/screens/home';
 @import './views/screens/profile';
 @import './views/screens/setting';
-@import './views/screens/deleteAccountForm.scss';
+@import './views/screens/settingAccountForm';
 
 * {
   box-sizing: border-box;

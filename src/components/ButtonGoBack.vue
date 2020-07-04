@@ -12,8 +12,10 @@ export default {
   },
   methods: {
     ...mapMutations([ENABLE_USER_DELETE]),
-    goBack(e) {
-      if (this.enabledUserDelete) this.enableUserDelete();
+    goBack() {
+      if (this.enabledUserDelete) {
+        setTimeout(() => { this.enableUserDelete(); }, 100);
+      }
       this.$router.go(-1);
     }
   }

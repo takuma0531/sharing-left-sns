@@ -46,9 +46,6 @@ export default {
     onSubmit() {
       this.checkPassword({ password: this.password });
     },
-    goBack() {
-      this.$router.go(-1);
-    }
   }
 };
 </script>
