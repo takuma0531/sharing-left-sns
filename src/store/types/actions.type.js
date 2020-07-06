@@ -9,7 +9,7 @@ export const AUTHENTICATE_USER = 'authenticateUser';
 export const CHECK_PASSWORD = 'checkPassword';
 
 // profile module
-export const GET_PROFILE = 'getProfile';
+export const GET_PROFILE_INFO = 'getProfileInfo';
 
 // post module
 export const ADD_POST = 'addPost';

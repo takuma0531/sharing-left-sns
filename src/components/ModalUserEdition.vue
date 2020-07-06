@@ -46,7 +46,6 @@ export default {
     }
   },
   async created() {
-    await this.getUser();
     this.userData = this.userInfo;
   }
 };

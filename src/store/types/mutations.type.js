@@ -5,7 +5,8 @@ export const SET_USER = 'setUser';
 export const ENABLE_USER_DELETE = 'enableUserDelete';
 
 // profile module
-export const SET_PROFILE = 'setProfile';
+export const SET_PROFILE_USER = 'setProfileUser';
+export const SET_PROFILE_POSTS = 'setProfilePosts';
 export const ADD_PROFILE_POST = 'addProfilePost';
 export const DELETE_PROFILE_POST = 'deleteProfilePost';
 

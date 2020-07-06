@@ -36,7 +36,7 @@
 import { ModalUserEdition, Post } from "../../components";
 import { mapGetters, mapMutations, mapActions } from "vuex";
 import {
-  GET_PROFILE,
+  GET_PROFILE_INFO,
   GET_USER,
   EDIT_USER
 } from "../../store/types/actions.type";
@@ -61,14 +61,13 @@ export default {
     ])
   },
   methods: {
-    ...mapActions([GET_PROFILE]),
+    ...mapActions([GET_PROFILE_INFO]),
     showUserEditionModal() {
       this.isShowUserEditionModal = !this.isShowUserEditionModal;
     }
   },
   async created() {
-    await this.getProfile(this.$route.query.id);
-  },
-  mounted() {}
+    await this.getProfileInfo(this.$route.query.id);
+  }
 };
 </script>
