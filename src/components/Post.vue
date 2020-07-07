@@ -45,7 +45,7 @@ export default {
   },
   props: {
     post: {
-      type: Object,
+      type: Object
     }
   },
   computed: {
@@ -54,15 +54,16 @@ export default {
       return this.userInfo._id;
     },
     nickname() {
+      if (!this.post._poster) return "";
       return this.post._poster.nickname;
     },
     posterId() {
+      if (!this.post._poster) return "";
       return this.post._poster._id;
     }
   },
   methods: {
     ...mapActions(["deletePost"])
-  },
-  mounted() {}
+  }
 };
 </script>

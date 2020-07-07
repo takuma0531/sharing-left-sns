@@ -66,8 +66,8 @@ export default {
       this.isShowUserEditionModal = !this.isShowUserEditionModal;
     }
   },
-  async created() {
-    await this.getProfileInfo(this.$route.query.id);
+  created() {
+    this.getProfileInfo(this.$route.query.id);
   }
 };
 </script>
